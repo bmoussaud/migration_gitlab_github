@@ -1,29 +1,28 @@
 # Migration from GitLab to GitHub
 
-## Migrated Items
-
 Migrating a repository data from GitLab to GitHub Enterprise Cloud includes:
 
 * Git source (including commit history)
-* Pull requests
-* User history for pull requests
-* Work item links on pull requests
-* Attachments on pull requests
-* Branch policies for the repository (user-scoped branch policies and cross-repo branch policies are not included)
-
-## Links
-* https://docs.github.com/en/migrations/using-github-enterprise-importer/migrating-from-azure-devops-to-github-enterprise-cloud/about-migrations-from-azure-devops-to-github-enterprise-cloud
+* Git branches
+* Tags
 
 
 ## Install CLI
 
-Install [GitHub CLI](https://cli.github.com/)
+* Install Git CLi
+* Install [GitHub CLI](https://cli.github.com/)
 
-### set a GitHub Token 
+## Create a GitHub Personel Access Token (PAT)
+
+Assign the permission depending of the role (Enterprise owner, Organization owner, Migrator).
+
+Use personal access token __classic__ Only.
+
+The Permissions are `admin:org, repo, workflow`
 
 ```ps1
-[System.Environment]::SetEnvironmentVariable('githubToken','ghp_hirb25Pb7yBenoitGrgaLJeBdBcwCoucouqT')
-```
+$env:GH_PAT="ghp_hirb25Pb7yBenoitGrgaLJeBdBcwCoucouqT"
+````
 
 ```bash
 export GH_TOKEN="ghp_hirb25Pb7yBenoitGrgaLJeBdBcwCoucouqT"
@@ -55,3 +54,7 @@ git clone --bare $SOURCE_REPO_URL
 ```bash
 git push --mirror https://github.com/${GITHUB_ORG}/${REPO_NAME}.git
 ```
+
+### Migration Scripts
+
+`migration_repository.ps1` and `migration_repository.sh` gather all these commands to illustrate the migration of a single repository from GitLab to GitHub.
