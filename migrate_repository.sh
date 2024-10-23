@@ -9,10 +9,9 @@ fi
 
 # Variables
 GITHUB_ORG="bmoussaudms"
-REPO_NAME="tinyMediaManager"
+REPO_NAME="spring-petclinic-microservices"
 SOURCE_REPO_URL="https://gitlab.com/tinyMediaManager/tinyMediaManager.git"
-USERNAME=bmousaud
-
+SOURCE_REPO_URL="https://gitlab.com/laurentgrangeau/${REPO_NAME}.git"
 
 gh auth login --with-token <<< $GH_TOKEN
 

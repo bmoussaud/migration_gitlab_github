@@ -2,7 +2,6 @@
 $GITHUB_ORG='bmoussaudms'
 $REPO_NAME="tinyMediaManager"
 $SOURCE_REPO_URL="https://gitlab.com/tinyMediaManager/tinyMediaManager.git"
-$USERNAME='bmousaud'
 
 Set-PSDebug -Trace 0
 
